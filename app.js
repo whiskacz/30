@@ -8,7 +8,12 @@ form.addEventListener('submit', (e) => {
     const nameURL = name.value
     const surnameURL = surname.value
 
-    const URL = `http://localhost:3000/?name=${encodeURIComponent(nameURL)}&surname=${encodeURIComponent(surnameURL)}`
+    const params  = new URLSearchParams({
+        nameURL,
+        surnameURL
+    })
+
+    const URL = `http://localhost:3000/?` + params
 
     div.innerHTML = URL
 })
